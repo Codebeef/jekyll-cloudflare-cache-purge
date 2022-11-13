@@ -9,6 +9,14 @@ on:
 jobs:
   build:
     name: Build + Publish
+
+    on:
+      workflow_run:
+        workflows: ["Rspec"]
+        branches: [main]
+        types: 
+          - completed
+
     runs-on: ubuntu-latest
     permissions:
       contents: read
