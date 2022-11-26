@@ -1,11 +1,9 @@
 name: Publish
 
 on:
-  workflow_run:
-    workflows: ["Rspec"]
-    branches: [main]
-    types: 
-      - completed
+  release:
+    types:
+      - published
 
 jobs:
   build:
