@@ -1,8 +1,7 @@
 # jekyll-cloudflare-cache-purge
 
 [![Gem Version](https://badge.fury.io/rb/jekyll-cloudflare-cache-purge.svg)](https://badge.fury.io/rb/jekyll-cloudflare-cache-purge)
-[![.github/workflows/rspec.yml][badge-build]][build]
-[![License][badge-license]][license]
+[![RSpec](https://github.com/Codebeef/jekyll-cloudflare-cache-purge/actions/workflows/rspec.yml/badge.svg)](https://github.com/Codebeef/jekyll-cloudflare-cache-purge/actions/workflows/rspec.yml)
 
 Sends a request to cloudflare once jekyll has finished building your sire to
 clear the cache there.
