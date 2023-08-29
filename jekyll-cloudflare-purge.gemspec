@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop-jekyll", "~> 0.12.0"
   spec.add_development_dependency "typhoeus", ">= 0.7", "< 2.0"
-  spec.add_development_dependency "webmock", "~> 3.18.1"
+  spec.add_development_dependency "webmock", "~> 3.19.1"
 end
