@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "net/http"
+
 class CloudflareCachePurge
   def self.run
     new.tap(&:run)
