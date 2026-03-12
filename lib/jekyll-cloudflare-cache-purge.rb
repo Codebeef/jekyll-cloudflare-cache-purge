@@ -12,7 +12,7 @@ class CloudflareCachePurge
                                 "and CLOUDFLARE_ZONE to enable")
     end
 
-    if response.is_a?(Net::HTTPSuccess)
+    if response.is_a?(::Net::HTTPSuccess)
       Jekyll.logger.info "Cloudflare Cache:", "Purged"
     else
       Jekyll.logger.warn "Cloudflare Cache:", "FAILED: #{response.body}"
@@ -24,7 +24,7 @@ class CloudflareCachePurge
   end
 
   def request
-    @request ||= Net::HTTP::Post.new(uri.request_uri).tap do |req|
+    @request ||= ::Net::HTTP::Post.new(uri.request_uri).tap do |req|
       req["Authorization"] = "Bearer #{ENV.fetch("CLOUDFLARE_API_TOKEN")}"
       req["Content-Type"] = "application/json"
       req.body = '{"purge_everything":true}'
@@ -32,7 +32,7 @@ class CloudflareCachePurge
   end
 
   def http
-    @http ||= Net::HTTP.new(uri.host, uri.port).tap do |h|
+    @http ||= ::Net::HTTP.new(uri.host, uri.port).tap do |h|
       h.use_ssl = true
       h.verify_mode = OpenSSL::SSL::VERIFY_PEER
     end
